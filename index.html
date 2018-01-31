@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="lib/main.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <link rel="icon" href="favicon.ico">
+
+        <title>Himebot - the only music bot you'll ever need</title>
+    </head>
+    <body>
+        <section class="hero is-primary is-fullheight">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <img src="img/rsz_hime_yarizakura.png" style="width:250px; height: 250px; border-radius: 50%;" class="is-unselectable" />
+                    <p class="title is-1">
+                        <b>Himebot</b>
+                    </p>
+                    <p class="subtitle">
+                        The only music bot you'll ever need
+                    </p>
+                    <a class="button is-info" href="https://discord.gg/BCAF7rH">
+                        <span class="icon is-small">
+                            <i class="fa fa-comments" aria-hidden="true"></i>
+                        </span>
+                        <span>Join Hime's server</span>
+                    </a>
+                    <a class="button is-primary is-inverted" href="https://discordapp.com/oauth2/authorize?client_id=232916519594491906&scope=bot&permissions=36980800">
+                        <span class="icon is-small">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </span>
+                        <span>Invite Hime to your server</span>
+                    </a>
+                    <a class="button is-info" href="https://www.patreon.com/himebot">
+                        <span class="icon is-small">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </span>
+                        <span>Donate to Hime</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-foot">
+                <nav class="tabs is-boxed is-fullwidth">
+                    <div class="container">
+                        <ul id="tabs">
+                            <li class="is-active">
+                                <a href="index.html">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                    </span>
+                                    <span>About</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="features_and_commands.html">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </span>
+                                    <span>Features & Commands</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="faq.html">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-info" aria-hidden="true"></i>
+                                    </span>
+                                    <span>FAQ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="content is-medium">
+                            <p class="title">What is Himebot?</p>
+                            <hr>
+                            <p>Himebot is a simple yet featureful Discord music bot, that delivers many essential and unique features a music bot must have, while maintaining its simplicity.</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="content is-medium">
+                            <p class="title">Who made Himebot?</p>
+                            <hr>
+                            <div class="columns">
+                                <div class="column is-narrow">
+                                    <figure class="image is-128x128">
+                                        <img class="is-unselectable" src="https://cdn.discordapp.com/avatars/205346839082303488/b519141649af459b28c331d15be5ff84" />
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <p class="">Hime is coded in Java using the JDA library by me (init0#8366). It was originally coded in Python as a hobby for me to learn programming, but it has grew a lot since then and is currently used in <b id="servers"></b> servers.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p><b>Himebot - the only music bot you'll ever need</b></p>
+                    <p>Copyright &copy; init0 2018</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        var HttpClient = function() {
+            this.get = function(aUrl, aCallback) {
+                var anHttpRequest = new XMLHttpRequest();
+                anHttpRequest.onreadystatechange = function() {
+                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                        aCallback(anHttpRequest.responseText);
+                }
+                anHttpRequest.open( "GET", aUrl, true );
+                anHttpRequest.send( null );
+            }
+        }
+
+        new HttpClient().get("https://discordbots.org/api/bots/232916519594491906/stats", function(response) {
+            data = JSON.parse(response);
+            var server_count = Number(data["server_count"]).toLocaleString();
+            document.getElementById("servers").innerHTML = server_count;
+        });
+    </script>
+</html>

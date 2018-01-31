@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="lib/main.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <link rel="icon" href="favicon.ico">
+
+        <title>Himebot - the only music bot you'll ever need</title>
+    </head>
+    <body>
+        <section class="hero is-primary is-fullheight">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <img src="img/rsz_hime_yarizakura.png" style="width:250px; height: 250px; border-radius: 50%;" class="is-unselectable" />
+                    <p class="title is-1">
+                        <b>Himebot</b>
+                    </p>
+                    <p class="subtitle">
+                        The only music bot you'll ever need
+                    </p>
+                    <a class="button is-info" href="https://discord.gg/BCAF7rH">
+                        <span class="icon is-small">
+                            <i class="fa fa-comments" aria-hidden="true"></i>
+                        </span>
+                        <span>Join Hime's server</span>
+                    </a>
+                    <a class="button is-primary is-inverted" href="https://discordapp.com/oauth2/authorize?client_id=232916519594491906&scope=bot&permissions=36980800">
+                        <span class="icon is-small">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </span>
+                        <span>Invite Hime to your server</span>
+                    </a>
+                    <a class="button is-info" href="https://www.patreon.com/himebot">
+                        <span class="icon is-small">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </span>
+                        <span>Donate to Hime</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-foot">
+                <nav class="tabs is-boxed is-fullwidth">
+                    <div class="container">
+                        <ul id="tabs">
+                            <li>
+                                <a href="index.html">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                    </span>
+                                    <span>About</span>
+                                </a>
+                            </li>
+                            <li class="is-active">
+                                <a href="features_and_commands.html">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </span>
+                                    <span>Features & Commands</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="faq.html">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-info" aria-hidden="true"></i>
+                                    </span>
+                                    <span>FAQ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <section class="section" id="features">
+            <div class="container">
+                <p class="title has-text-centered" id="features">Features</p>
+                <hr>
+                <!-- card images are 660x600 -->
+                <div class="tile is-ancestor">
+
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child box">
+                            <figure class="image">
+                                <img src="img/play.png" />
+                            </figure>
+                        </article>
+                        <article class="tile is-child">
+                            <div class="content">
+                                <p class="title">No duration caps!</p>
+                                <p class="subtitle">Hime doesn't restrict the durations of the songs you queue either, thus making it possible to queue a few hundred hours worth songs without any problems.</p>
+                            </div>
+                        </article>
+                        <article class="tile is-child box">
+                            <figure class="image">
+                                <img src="img/autoplay.png" />
+                            </figure>
+                        </article>
+                    </div>
+
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child">
+                            <div class="content">
+                                <p class="title">No playlist limits!</p>
+                                <p class="subtitle">Hime doesn't restrict how many songs you are able to queue in one session, meaning you could queue REALLY big playlists if you wanted to!</p>
+                            </div>
+                        </article>
+                        <article class="tile is-child box">
+                            <figure class="image">
+                                <img src="img/spongebob_10hr.png" />
+                            </figure>
+                        </article>
+                        <article class="tile is-child">
+                            <div class="content">
+                                <p class="title">Unique autoplay feature!</p>
+                                <p class="subtitle">Autoplay is a feature like no other! It allows you to queue your own preset playlist after all of the songs in the queue are done playing. Or the default autoplay playlist, which is a selection of chill Lo-Fi beats.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+                <p class="title has-text-centered" id="commands">Commands</p>
+                <hr>
+                <div class="col-md-12">
+                    <h3 class="text-center">Music commands</h3>
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                              <th scope="col" class="col-md-2">Name/Aliases</th>
+                              <th scope="col" class="col-md-3">Arguments</th>
+                              <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">.pl | .play</th>
+                                <td>[shuffle] name/url/playlist/autoplay</td>
+                                <td>Plays a song or playlist with the given link or name, a link is required for any song that is not on youtube (also use this to invite the bot to the voice channel). You can use <font color="#FF3F3F">.play shuffle playlist_link</font> to shuffle a playlist before playing it or use <font color="#FF3F3F">.play autoplay</font> to play the autoplay playlist. You also can do <font color="#FF3F3F">.play scsearch:song</font> to search and play a song from soundcloud</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.jumpto | .skipto</th>
+                                <td>song_index</td>
+                                <td>Skips to a song based on the queue index.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.seek</th>
+                                <td>duration_in_seconds</td>
+                                <td>Jumps over the given amount of seconds in a song, you could also jump backwards with something such as <font color="#FF3F3F">.seek -10</font> which will jump back 10 seconds.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.search</th>
+                                <td>song</td>
+                                <td>Searches for a song on youtube and lets you to queue it, add <font color="#FF3F3F">scsearch:</font> before the song to search for searching on soundcloud.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.queue | .q | .songlist</th>
+                                <td>[page]</td>
+                                <td>Shows the current queue of songs. The queue is interactive. You can click on the reaction emotes below the message to switch between pages, or specify the page with the <font color="#FF3F3F">page</font> parameter.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.delete | .r | .remove</th>
+                                <td>song_index [song_index_2, song_index_3...]</td>
+                                <td>Removes a song based on the queue index. You could also remove multiple songs by passing multiple indexes</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.mov | .playafter | .move</th>
+                                <td>song_to_move [position_in_queue]</td>
+                                <td> Moves a song based on its index to a position in the queue. If no position is given, the song will be moved to the position after the current song.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.np | .nowplaying | .current</th>
+                                <td>Shows info about the current playing song.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.modskip | .forceskip</th>
+                                <td>Forceskips the song as a DJ or an admin, no need to vote.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.voteskip | .skip</th>
+                                <td>Votes to skip the current song.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.prev | .previous</th>
+                                <td>Enqueues the previous song.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.stop | .leave | .diconnect</th>
+                                <td>Stops the current song and clears the queue, this also makes the bot disconnect from the voice channel.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.p | .pause</th>
+                                <td>Pauses the current song.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.re | .resume</th>
+                                <td>Resumes the current paused song.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.rq | .clearqueue | .reset</th>
+                                <td>Removes all entries from the queue, though this doesn't make the bot leave the voice channel unlike <font color="#FF3F3F">.stop</font>.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.sh | .shuffle</th>
+                                <td>Shuffles the current queue.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.loop | .repeat</th>
+                                <td>Sets the repeat state of the current song queue to either True or False.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="text-center">Patron commands</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col" class="col-md-2">Name/Aliases</th>
+                              <th scope="col" class="col-md-3">Arguments</th>
+                              <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">.vol | .volume</th>
+                                <td>[1-100]</td>
+                                <td>Sets the player volume in %. Specify nothing to see the current volume.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.aliases</th>
+                                <td>add/remove alias [link/name]</td>
+                                <td>This command allows you to create specific aliases for songs and playlists if their names are too long to write or if you can only play them using links. Once you have created an alias, you can then play it using <font color="#FF3F3F">.pl alias</font>. This is very useful if you don't want to copy paste the link or name every time.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="text-center">General commands</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col" class="col-md-2">Name/Aliases</th>
+                              <th scope="col" class="col-md-3">Arguments</th>
+                              <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">.nsfw</th>
+                                <td>[term]</td>
+                                <td>;) The NSFW command can only be used in discord NSFW channels. Set a channel to NSFW if you want to use the command and unset NSFW for a channel to disable it.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">.lyrics</th>
+                                <td>name of song</td>
+                                <td>Searches and shows the lyrics for a song on genius.com.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.partners</th>
+                                <td>Shows the partners of the Himebot.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.help</th>
+                                <td>Returns a link to the help section of this website.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.info | .stats | .botinfo</th>
+                                <td>Shows some general info about the bot.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.links | .invite</th>
+                                <td>Shows the invite link for the bot, aswell as some other links for things such as the website, patreon and discord server.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.ping</th>
+                                <td>Pings the bot and shows the latency, used to check how fast the bot connects to discord. Higher pings usually indicate that there might be lag.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" colspan="2">.donate</th>
+                                <td>Shows info for donating</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <h3 class="text-center">Admin commands</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                              <th scope="col" class="col-md-2">Name/Aliases</th>
+                              <th scope="col" class="col-md-3">Arguments</th>
+                              <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">.settings</th>
+                                <td>[dj/tc/vc/autoplay/tms/prefix value]</td>
+                                <td>
+                                    Shows the settings of the bot in the server. You z change the listed settings using this command.<br>Example: <font color="#FF3F3F"><b>.settings dj @role</b></font><br><font color="#FF3F3F">dj</font>: Sets a DJ role for the server. Values: <b>NONE, @role</b>.<br><font color="#FF3F3F">tc</font>: Sets a text channel for using Hime's music commands and stuff related to music. Values: <b>NONE, #channel</b>.<br><font color="#FF3F3F">vc</font>: Sets a voice channel for Hime to play music in. Values: <b>NONE, name of voice channel</b>.<br><font color="#FF3F3F">autoplay</font>: Autoplay is a feature similar to the YouTube autoplay, where a playlist could be played after the queue has done playing. Values: <b>NONE, DEFAULT, https://link.to.playlist/...</b>.<br><font color="#FF3F3F">tms</font>: This setting allows you to disable the now playing messages. Values: <b>TRUE, FALSE</b><br><font color="#FF3F3F">prefix</font>: This is the most dangerous setting, the prefix is a character that each of the commands starts with, the default prefix is . though you could change it to something else such as !. Values: <b>NONE, prefix_character</b>.<br>Beware that the bot will not respond if you try to invoke a command using the <font color="#FF3F3F">.</font> prefix after you've changed the prefix. If you want to change it back, then just tag the bot like this <font color="#FF3F3F">@hime hime#3590</font> and it will tell you its current prefix.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p><b>Himebot - the only music bot you'll ever need</b></p>
+                    <p>Copyright &copy; init0 2018</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
