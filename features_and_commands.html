@@ -184,7 +184,7 @@
                                 </tr>
                                 <tr>
                                     <th>.delete | .r | .remove</th>
-                                    <td>index/[index_2, index_3...]</td>
+                                    <td>index index_2 index_3</td>
                                     <td>Removes a song based on the queue index. You could also remove multiple songs by passing multiple indexes</td>
                                 </tr>
                                 <tr>
@@ -243,9 +243,9 @@
                                     <td>Sets the player bass boost in different modes. </td>
                                 </tr>
                                 <tr>
-                                    <th>.aliases</th>
-                                    <td>add/remove alias [link/name]</td>
-                                    <td>This command allows you to create specific aliases for songs and playlists if their names are too long to write or if you can only play them using links. Once you have created an alias, you can then play it using <font color="#FF3F3F">.pl alias</font>. This is very useful if you don't want to copy paste the link or name every time.</td>
+                                    <th>.radio | .aliases</th>
+                                    <td>add/remove radio [link/name]</td>
+                                    <td>This command allows you to create "radios" for Hime to play. Simply make a new radio pointing to a playlist and create a voice channel with the same name, if someone joins the voice channel, Hime will join the channel automatically and play the preset radio playlist</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -280,16 +280,12 @@
                                 <td>Shows some general info about the bot.</td>
                             </tr>
                             <tr>
-                                <th colspan="2">.links | .invite</th>
-                                <td>Shows the invite link for the bot, aswell as some other links for things such as the website, patreon and discord server.</td>
-                            </tr>
-                            <tr>
                                 <th colspan="2">.ping</th>
                                 <td>Pings the bot and shows the latency, used to check how fast the bot connects to discord. Higher pings usually indicate that there might be lag.</td>
                             </tr>
                             <tr>
-                                <th colspan="2">.donate</th>
-                                <td>Shows info for donating</td>
+                                <th colspan="2">.donate | .invite</th>
+                                <td>Shows info for donating and inviting the bot</td>
                             </tr>
                         </tbody>
                     </table>
